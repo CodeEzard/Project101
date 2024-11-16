@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: changeBackground 15s infinite;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Background Animation */
+@keyframes changeBackground {
+    0% { background-image: url("WALLPAPERS.jpeg"); }
+    10% { background-image: url("wallpaper1.gif"); }
+    20% { background-image: url("wallpaper2.jpeg"); }
+    30% { background-image: url("wallpaper3.jpeg"); }
+    40% { background-image: url("goku.jpg"); }
+    50% { background-image: url("naruto.jpg"); }
+    60% { background-image: url("demon\ slayer.jpg"); }
+    70% { background-image: url("itachi.jpg"); }
+    80% { background-image: url("shadow\ garden.png"); }
+    90% { background-image: url("sukuna.jpg"); }
+    100% { background-image: url("titan.png"); }
+
+}
+
+
+.content {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 2rem;
+    opacity: 0;
+    animation: grow 2s forwards ease-in-out;
+    animation-delay: 0.5s;
+    margin-top: 20px; /* Space at the top */
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 4s forwards ease-in-out;
+    animation-delay: 4s;
+}
+@keyframes grow {
+    from {
+        font-size: 2rem;
+        opacity: 0;
+    }
+    to {
+        font-size: 4rem;
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.l-side-nav {
+    position: absolute;  /* Positioned relative to the nearest positioned ancestor */
+    left: 0;  /* Align to the left edge */
+    display: -webkit-box;  /* Older syntax for flexbox (for WebKit browsers) */
+    display: -webkit-flex;  /* Flexbox layout for WebKit browsers */
+    display: -ms-flexbox;  /* Flexbox for Internet Explorer */
+    display: flex;  /* Standard flexbox layout */
+    height: 100%;  /* Full height of the parent container */
+    -webkit-box-align: center;  /* Align items in the center for WebKit browsers */
+    -webkit-align-items: center;  /* Align items in the center for WebKit browsers */
+    -ms-flex-align: center;  /* Align items in the center for Internet Explorer */
+    align-items: center;  /* Center items vertically within the flex container */
+}
+/* Decorative vertical line inside the side navigation */
+.l-side-nav::before {
+    content: "";  /* Empty content for the pseudo-element */
+    position: absolute;  /* Positioned relative to the .l-side-nav */
+    top: 50%;  /* Align the line vertically at the center */
+    left: 0;  /* Align the line to the left edge of the container */
+    -webkit-transform: translateY(-50%);  /* Center the line vertically in WebKit browsers */
+    transform: translateY(-50%);  /* Center the line vertically */
+    width: 2px;  /* Set the width of the line */
+    height: 70%;  /* Set the height relative to the container */
+    max-height: 750px;  /* Limit the maximum height of the line */
+    background-color: #555;  /* Set a dark color for the line */
+    opacity: .35;  /* Make the line semi-transparent */
+    z-index: 10;  /* Ensure the line appears above other elements */
+}
